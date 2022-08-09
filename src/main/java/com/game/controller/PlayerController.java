@@ -41,6 +41,11 @@ public class PlayerController {
     public Integer getAllCount() {
         return playerService.getAllCount();
     }
+//MY METHOD BELOW
+    @GetMapping("/{ID}")
+    public Player getSinglePlayer(@PathVariable("ID") long id) {
+        return playerService.getSinglePlayerByID(id);
+    }
 
     @PostMapping
     public ResponseEntity<PlayerInfo> createPlayer(@RequestBody PlayerInfo info) {

@@ -26,6 +26,11 @@ public class PlayerService {
         return playerRepository.getAll(pageNumber, pageSize);
     }
 
+    //MY METHOD BELOW
+    public Player getSinglePlayerByID(long id){
+        return playerRepository.findById(id).orElse(null);
+    }
+
     public Integer getAllCount() {
         return playerRepository.getAllCount();
     }

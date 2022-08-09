@@ -1,0 +1,152 @@
+body {
+    background: rgb(11,0,36);
+    background: radial-gradient(circle, rgba(11,0,36,0.23042720506171221) 0%, rgba(219,183,228,0.8130602582830007) 61%, rgba(0,44,255,0.4573179613642332) 100%);
+    height: 100%;
+    margin: 30px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: Helvetica, serif;
+}
+
+.pageBody {
+    max-width: 70%;
+    margin: auto;
+}
+
+.mainTitle {
+    padding: 10px 0px;
+    border: 1px solid darkorchid;
+    color: whitesmoke;
+    text-shadow: -2px -1px 0 #000, 2px -1px 0 #000, -2px 1px 0 #000, 2px 1px 0 #000;
+}
+
+.horizontalLine {
+    margin: 20px;
+}
+
+h1 {
+    margin: auto;
+    width: 100%;
+    text-align: center;
+}
+
+.accountsList {
+    margin-bottom: 10px;
+}
+
+.rowSelector {
+    text-align: left;
+    padding-bottom: 10px;
+}
+
+.table {
+    width: 100%;
+}
+
+th, td {
+    border: 2px solid rebeccapurple;
+}
+
+td[contenteditable]{
+    border: 1px solid rebeccapurple;
+    background-color: whitesmoke;
+}
+
+.table td {
+    border: 1px solid rebeccapurple;
+    padding: 2px 6px;
+}
+
+.tableBody tr:nth-child(odd) {
+    background-color:rgba(255,76,249,0.1);
+}
+
+.paging {
+    display: flex;
+    margin-top: 10px;
+    justify-content: center;
+}
+
+.pagingLabel{
+    margin-top: 3px;
+}
+
+.pagination {
+    display: inline-block;
+    box-sizing: border-box;
+    margin-left: 15px;
+}
+
+.pagination a {
+    color: black;
+    float: left;
+    padding: 4px 8px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddd;
+
+}
+
+.pagination a.active {
+    background-color: plum;
+    color: white;
+    border: 1px solid rebeccapurple;
+}
+
+.pagination a:hover:not(.active) {
+    background-color: #ddd;
+}
+
+.createBlock{
+    margin: auto;
+    max-width: 30%;
+}
+
+.createLabel{
+    text-align: center;
+    border: 1px solid rebeccapurple;
+    color: whitesmoke;
+    text-shadow: -2px -1px 0 #000, 2px -1px 0 #000, -2px 1px 0 #000, 2px 1px 0 #000;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.inputForms{
+    text-align: left;
+    position: relative;
+}
+
+input, .inputForms > div > label > select {
+    text-align: right;
+    position: absolute;
+    right: 10px;
+}
+
+.inputForms > div:not(.buttons) {
+    margin-bottom: 10px;
+    padding-bottom: 3px;
+    border-bottom: 1px solid rebeccapurple;
+}
+
+.buttons{
+    text-align: center;
+}
+
+.resetButton, .submitButton {
+    border-radius: 15%;
+    transition-duration: 0.01s;
+    font-size: 18px;
+}
+.resetButton:hover, .submitButton:hover{
+    background-color: thistle;
+    color: white;
+
+}
+.resetButton:active, .submitButton:active{
+    color: white;
+    background-color: rebeccapurple;
+}
+
+.scroll{
+    margin-bottom: 200px;
+}
