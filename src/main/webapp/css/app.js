@@ -33,8 +33,8 @@ let fillTable = function (data) {
             "<td>" + obj.level + "</td>" +
             "<td>" + new Date(obj.birthday).toLocaleDateString() + "</td>" +
             "<td>" + obj.banned + "</td>" +
-            "<td>" + `<img src=\"../img/edit2.png\" id =\"editImgId${obj.id}\" alt=\"Edit\" onclick=\"editRow(${obj.id})\" width=30 height=30 style=\"visibility:visible \">` + "</td>" +
-            "<td>" + `<img src=\"../img/delete2.png\" id =\"deleteImgId${obj.id}\" alt=\"Delete\" onclick=\"deleteRow(${obj.id})\" width=30 height=30 style=\"visibility:visible \">` +
+            "<td>" + `<img src=\"img/edit2.png\" id =\"editImgId${obj.id}\" alt=\"Edit\" onclick=\"editRow(${obj.id})\" width=30 height=30 style=\"visibility:visible \">` + "</td>" +
+            "<td>" + `<img src=\"img/delete2.png\" id =\"deleteImgId${obj.id}\" alt=\"Delete\" onclick=\"deleteRow(${obj.id})\" width=30 height=30 style=\"visibility:visible \">` +
             "</td></tr>");
     }
 };
