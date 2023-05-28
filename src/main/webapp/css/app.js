@@ -41,7 +41,7 @@ let fillTable = function (data) {
 
 //метод создает блок переключ страниц с АКТИВНОЙ стр №1
 function createPages(pagesRequired) {
-    let pageBlock = $(".pagination");
+    let pageBlock = $(".pagination"); //jQuery selector used to select all elements with the CSS class "pagination"
     pageBlock.html("");
     for (let i = 1; i <= pagesRequired; i++) {
         pageBlock.append(`<a href=\"#\" id=\"page${i}\" onclick=\"goToPage(${i})\">${i}</a>`);
@@ -67,11 +67,11 @@ function goToPage(pageNumber) {
 
 //счетчик кол-ва необходимых страниц (отдает число). Оно же число последней страницы!
 let totalPagesCounter = function () {
-    let selectedCountOfRows = $("#counter option:selected").val();
+    let selectedCountOfRows = $("#counter option:selected").val(); //chosen number of rows display on single page
     return Math.ceil(totalAccountsCount() / selectedCountOfRows);
 }
 
-//номер текущей страницы. Отдает нулл если нет текцщей страницы (тег active)
+//номер текущей страницы. Отдает нулл если нет текущей страницы (тег active)
 let getCurrentPage = function () {
     let page = $("body > div > a.active").text();
     if (!page){
@@ -88,7 +88,7 @@ let totalAccountsCount = function totalAccountsCount() {
         type: 'get',
         dataType: 'JSON',
         async: false,
-        success: function (data) {
+        success: function (data) {  //the server response from endpoint /rest/players/count passes in data (number)
             result = data;
             console.log(("Total accounts - " + result));
         }
@@ -112,6 +112,7 @@ function editRow(id) {
     editingImg.attr('alt', 'Save');
     editingImg.attr('onclick', `saveFunction(${id})`);
     editingImg.attr('id', `saveImgId${id}`);
+    // jQuery selector used to select the second <td> element within a specific table row
     $(`#trID${id} > td:nth-child(2)`).attr('contenteditable', 'true');
     $(`#trID${id} > td:nth-child(3)`).attr('contenteditable', 'true');
     let raceSelector = $(`#trID${id} > td:nth-child(4)`);
@@ -130,7 +131,7 @@ let createHtmlDropDownList = function (list, idName, defaultValue) {
     let optionsBlock = function (list) {
         let resultOptionBlock = "";
         for (const element of list) {
-            var optionTag = "\n<option value=\"" + element + "\">" + element + "</option>\n";
+            let optionTag = "\n<option value=\"" + element + "\">" + element + "</option>\n";
             if (element === defaultValue) {
                 optionTag = "\n<option value=\"" + element + "\" selected>" + element + "</option>\n";
             }
@@ -148,7 +149,7 @@ let getListOfProperties = function () {
         url: "/rest/players/",
         type: 'get',
         data: {
-            pageSize: totalAccountsCount(),
+            pageSize: totalAccountsCount(), //URL = "/rest/players?pageSize=NUMBER"
         },
         dataType: 'JSON',
         async: false,
@@ -209,7 +210,7 @@ function saveFunction(id) {
 
 //рефреш таблицы на текущей странице. Если нет текущей - переход на первую.
 let refreshTable = function (pageNumber) {
-    $("#table > tbody").html("");
+    $("#table > tbody").html(""); //jQuery selector to select tbody tag which is inside the table tag
     if(!pageNumber){
         createPages(totalPagesCounter());
         createTableWithSizeAndPageNumParam(getSelectedCountOfRows(), null);
